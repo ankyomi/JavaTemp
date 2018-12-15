@@ -27,6 +27,7 @@ public class DBUtil {
 	private  String DBUSER;
 	private  String DBPWD;
 	private  String URL;
+	private  String dbName;
 	
 	private Connection connection;
 	private PreparedStatement pstmt;
@@ -41,6 +42,7 @@ public class DBUtil {
 			DBUSER = prop.getProperty("USER");
 			DBPWD = prop.getProperty("PWD");
 			URL = prop.getProperty("URL");
+			dbName = prop.getProperty("DATABASE");
 			System.out.println("进行注册");
 		}catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -50,6 +52,10 @@ public class DBUtil {
 			System.out.println("注册失败");
 			e.printStackTrace();
 		}
+	}
+	
+	public String getDataName() {
+		return dbName;
 	}
 	
 	public Connection getConnection() {
@@ -102,7 +108,6 @@ public class DBUtil {
                 if (col_value == null) {  
                     col_value = "";  
                 }  
-//                System.out.println(col_name + " : " + col_value);
                 map.put(col_name, col_value);  
             }  
             list.add(map);  

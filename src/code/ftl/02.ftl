@@ -1,5 +1,6 @@
+import java.io.*;
 
-public class Person{
+public class  ${tableName?cap_first}  implements Serializable  {
 <#list list as obj>
  private ${obj.DATA_TYPE}  ${obj.COLUMN_NAME};
 </#list>
